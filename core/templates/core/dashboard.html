@@ -1,0 +1,80 @@
+<html> Erp CARNES Vienesa</html>
+
+{ % block content % }
+
+<nav>
+    <a hreg= "'#">Erp CARNES Vienesa</a>
+    <spam>Bienvenido, {{ usuario.first_name |default:usuario.usuario_nombre}}</spam>
+    <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+</nav>
+
+<h2>Dashboard</h2> 
+<p>Assigned roles: <strong> {{ roles|join:", " }}</strong></p>
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.administrador > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>Administrador</h3>
+        <p>{% if permisos.administrador == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.recepcion_materias_primas > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>recepcion_materias_primas</h3>
+        <p>{% if permisos.recepcion_materias_primas == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.planta_produccion > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>planta_produccion</h3>
+        <p>{% if permisos.planta_produccion == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.control_calidad > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>control_calidad</h3>
+        <p>{% if permisos.control_calidad == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.tajado > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>tajado</h3>
+        <p>{% if permisos.tajado == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+<div style = "display: flex; flex-wrap: wrap; gap: 10px;">
+    {% if permisos.bodega > 0 %}
+    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+        <h3>bodega</h3>
+        <p>{% if permisos.bodega == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
+        <a href="#">Acceso</a>
+    </div>
+    {% endif %}
+
+</div>
+
+{% if permisos.customers == 0 and permisos.recepcion_materias_primas == 0 and permisos.planta_produccion == 0
+and permisos.control_calidad == 0 and permisos.tajado == 0 and permisos.bodega == 0
+and permisos.accounting == 0and permisos.reporting == 0 %}
+<div style="border: 1px solid Ored; padding: 10px; margin-top: 20px;">
+    <h4>No permisos asignados</h4>
+    <p>Actualmente no tienes permisos para acceder a ningún módulo del sistema.
+        Ponte en contacto con tu administrador para solicitar acceso.
+    </p>
+</div>
+endif %}
+{% endblock %}

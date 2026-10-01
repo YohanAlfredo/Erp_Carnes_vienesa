@@ -1,10 +1,10 @@
 <html> Erp CARNES Vienesa</html>
 
-{ % block content % }
+{% block content %}
 
 <nav>
     <a hreg= "'#">Erp CARNES Vienesa</a>
-    <spam>Bienvenido, {{ usuario.first_name |default:usuario.username}}</spam>
+    <spam>Bienvenido, {{ usuario.first_name |default:user.username}}</spam>
     <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
 </nav>
 
@@ -67,12 +67,12 @@
 
 </div>
 
-{% if permisos.customers == 0 and permisos.recepcion_materias_primas == 0 and permisos.planta_produccion == 0 and permisos.control_calidad == 0 and permisos.tajado == 0 and permisos.bodega == 0 and permisos.accounting == 0and permisos.reporting == 0 %}
+{% if permisos.customers == 0 and permisos.recepcion_materias_primas == 0 and permisos.planta_produccion == 0 and permisos.control_calidad == 0 and permisos.tajado == 0 and permisos.bodega == 0 %}
 <div style="border: 1px solid Ored; padding: 10px; margin-top: 20px;">
     <h4>No permisos asignados</h4>
     <p>Actualmente no tienes permisos para acceder a ningún módulo del sistema.
         Ponte en contacto con tu administrador para solicitar acceso.
     </p>
 </div>
-endif %}
+{% endif %} 
 {% endblock %}

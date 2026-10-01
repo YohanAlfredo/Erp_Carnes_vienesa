@@ -4,11 +4,13 @@
     <title>Acceso</title>
 </head>
 <body>
-    <h1>Acceso</h1>
-    <form method="post">
+    <h2>Acceso</h2>
+
+    <form method="POST">
         {% csrf_token %}
         {{ formulario.as_p }}
         <button type="submit">Iniciar sesión</button>
     </form>
+
 </body>
 </html>

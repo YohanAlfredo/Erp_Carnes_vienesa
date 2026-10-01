@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "usuarios",
 ]
 
-AUTH_MODEL_USER = 'usuarios.Usuario' #Usuario del modelo de autenticación
+AUTH_USER_MODEL = 'usuarios.Usuario' #Usuario del modelo de autenticación
 
 ACCESO_URL = "usuarios/acceso/" #LOGIN_URL = "users/login/" # Url de acceso a la aplicación
 ACCESO_REDIRECCION_URL = "usuarios/dashboard" # LOGIN_REDIRECT_URL = "users/dashboard/" dashboard = panel de control # Url de redirección después de iniciar sesión """Un dashboard o cuadro de mando es una herramienta visual que centraliza, organiza y muestra los indicadores clave de desempeño (KPI) y métricas de un negocio en una sola pantalla para facilitar la toma de decisiones"""

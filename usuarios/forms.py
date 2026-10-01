@@ -5,7 +5,7 @@ from .models import Usuario
 
 class Formulario_acceso(AuthenticationForm): #LoginForm)
     
-    usuario_nombre = forms.CharField(
+    username = forms.CharField(
         label ='Nombre de usuario', #etiqueta
         widget = forms.TextInput(attrs={ 
             "class": "form-control", # "clase": "control_formulario"
@@ -13,7 +13,7 @@ class Formulario_acceso(AuthenticationForm): #LoginForm)
         })
     )
     
-    contraseña = forms.CharField(
+    password = forms.CharField(
         label ='Contraseña', #etiqueta 
         widget = forms.PasswordInput(attrs={
             "class": "form-control", # "clase": "control_formulario"
@@ -24,4 +24,4 @@ class Formulario_acceso(AuthenticationForm): #LoginForm)
     class Meta:
         
         model = Usuario # modelo = Usuario
-        fields = ['usuario_nombre', 'contraseña'] # campos = ['usuario_nombre', 'contraseña']
+        fields = ['username', 'password'] # campos = ['usuario_nombre', 'contraseña']

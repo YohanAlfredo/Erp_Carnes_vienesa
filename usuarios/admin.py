@@ -7,9 +7,9 @@ from .models import Usuario, Rol, Usuario_Rol
 
 @admin.register(Usuario)
 class CustomUsuarioAdmin(UserAdmin):
-    list_display = ('usuario_nombre', 'email', 'primer_nombre','apellido' 'is_staff', 'is_active') #EL administrador tendra estos campos
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'is_active') #EL administrador tendra estos campos
     list_filter = ('is_staff', 'is_active', 'date_joined') #se puede filtrar por estos campos
-    search_fields = ('usuario_nombre', 'email', 'primer_nombre', 'apellido') #se puede buscar por estos campos
+    search_fields = ('username', 'email', 'first_name', 'last_name') #se puede buscar por estos campos
     
 @admin.register(Rol)#para poder manejar los roles
 class RolAdmin(admin.ModelAdmin):
@@ -20,6 +20,6 @@ class RolAdmin(admin.ModelAdmin):
 @admin.register(Usuario_Rol) #para poder manejar los roles de los usuarios
 class Usuario_RolAdmin(admin.ModelAdmin):
     list_display = ('usuario_id', 'rol')
-    list_filter = ('rol')
-    search_fields = ('usuario_id__usuario_nombre', 'rol__rol_nombre')
+    list_filter = ('rol',)
+    search_fields = ('usuario_id__username', 'rol__rol_nombre')
     

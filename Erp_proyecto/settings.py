@@ -43,9 +43,14 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'usuarios.Usuario' #Usuario del modelo de autenticación
 
-LOGIN_URL = 'acceso/' # Url de acceso a la aplicación
-LOGIN_REDIRECT_URL = 'dashboard' # dashboard = panel de control # Url de redirección después de iniciar sesión """Un dashboard o cuadro de mando es una herramienta visual que centraliza, organiza y muestra los indicadores clave de desempeño (KPI) y métricas de un negocio en una sola pantalla para facilitar la toma de decisiones"""
-LOGOUT_REDIRECT_URL = 'acceso' #  # Url de redirección después de cerrar sesión
+# Rutas globales para el control de sesiones de Django
+LOGIN_URL = 'acceso'          # Si alguien intenta entrar al Dashboard sin loguearse, Django lo mandará a la pantalla 'acceso'.
+LOGIN_REDIRECT_URL = 'dashboard'  # Cuando el usuario ponga su clave bien, Django lo mandará automáticamente al panel 'dashboard'.
+LOGOUT_REDIRECT_URL = 'acceso' # Cuando el usuario dé clic en Cerrar Sesión, Django lo regresará a la pantalla 'acceso'.
+
+#LOGIN_URL = 'acceso/' # Url de acceso a la aplicación
+#LOGIN_REDIRECT_URL = 'dashboard' # dashboard = panel de control # Url de redirección después de iniciar sesión """Un dashboard o cuadro de mando es una herramienta visual que centraliza, organiza y muestra los indicadores clave de desempeño (KPI) y métricas de un negocio en una sola pantalla para facilitar la toma de decisiones"""
+#LOGOUT_REDIRECT_URL = 'acceso' #  # Url de redirección después de cerrar sesión
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

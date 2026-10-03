@@ -9,7 +9,7 @@ from .models import Rol, Usuario_Rol
 def vista_inicio_seccion(request): #Login_view
     if request.user.is_authenticated:
         return redirect('dashboard')  # Redirige al panel principal si el usuario ya ha iniciado sesión
-    
+        
     if request.method == 'POST':
     
         formulario = Formulario_acceso(request.POST)

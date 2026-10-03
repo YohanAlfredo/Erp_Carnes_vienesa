@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Acceso</title>
-</head>
+<head><title>Acceso</title></head>
 <body>
-    <h2>Acceso</h2>
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ formulario.as_p }}
-        <button type="submit">Iniciar sesión</button>
-    </form>
+<!-- Abre la etiqueta especificando que el método de envío es POST -->
+<form method="POST">
+    <!-- El token de seguridad obligatorio de Django -->
+    {% csrf_token %}
+    
+    <!-- Imprime tus campos de Nombre de usuario y Contraseña -->
+    {{ formulario.as_p }}
+    
+    <!-- El botón que dispara la acción de enviar -->
+    <button type="submit">Iniciar sesión</button>
+</form>
 
 </body>
 </html>

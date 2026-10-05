@@ -26,7 +26,7 @@ def vista_dashboard(request):
                 permisos[module] = permisos_actuales
     
     context = {
-        "usuario": request.usuario,
+        "usuario": request.user,
         "permisos": permisos,
         "roles": [ur.rol.rol_nombre for ur in usuario_roles],
     }

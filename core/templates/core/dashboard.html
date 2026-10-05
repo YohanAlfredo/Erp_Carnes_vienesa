@@ -9,11 +9,11 @@
 </nav>
 
 <h2>Dashboard</h2> 
-<p>Assigned roles: <strong> {{ roles|join:", " }}</strong></p>
+<p>Roles asignados: <strong> {{ roles|join:", " }}</strong></p>
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.administrador > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>Administrador</h3>
         <p>{% if permisos.administrador == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
@@ -22,7 +22,7 @@
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.recepcion_materias_primas > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>recepcion_materias_primas</h3>
         <p>{% if permisos.recepcion_materias_primas == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
@@ -31,7 +31,7 @@
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.planta_produccion > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>planta_produccion</h3>
         <p>{% if permisos.planta_produccion == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
@@ -40,7 +40,7 @@
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.control_calidad > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>control_calidad</h3>
         <p>{% if permisos.control_calidad == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
@@ -49,7 +49,7 @@
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.tajado > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>tajado</h3>
         <p>{% if permisos.tajado == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
@@ -58,7 +58,7 @@
 
 <div style = "display: flex; flex-wrap: wrap; gap: 10px;">
     {% if permisos.bodega > 0 %}
-    <div style="border: 1px solid O#000; padding: 10px; width: 200px;">
+    <div style="border: 1px solid #000; padding: 10px; width: 200px;">
         <h3>bodega</h3>
         <p>{% if permisos.bodega == 1 %}Visualizacion unicamente{% else %}leer y editar{% endif %}</p>
         <a href="#">Acceso</a>
